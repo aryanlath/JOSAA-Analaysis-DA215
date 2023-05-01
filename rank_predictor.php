@@ -96,19 +96,21 @@
 						$stmt = $conn->query("SELECT CR FROM rank_data WHERE p_code  = \"{$p_code}\" AND I_code = \"{$i_code}\" AND seattype = \"{$_POST['cat']}\" ORDER by Year_;");
 						
 						$data = array();
-						$period = count($data)+1;
 
 						while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 							// echo $row['CR'];
 							array_push($data,$row['CR']);
 						}
+						$period = count($data);
+						// echo $period;
+
 						$alpha = 2 / ($period + 1);
 						$ema = array();
 						$ema[0] = $data[0];
 						for ($i = 1; $i < count($data); $i++) {
 							$ema[$i] = ($alpha * $data[$i]) + ((1 - $alpha) * $ema[$i - 1]);
 						}
-						echo (int) $ema[count($data)-1];
+						echo (int) round($ema[count($ema)-1]);
 					}
 
 					
