@@ -4,7 +4,7 @@
 		<title>Question1</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/q1_1.css" /> 
+		<link rel="stylesheet" href="assets/css/q1_1.css" />
 		<link rel="stylesheet" href="assets/css/proj.css" />
 		
 	</head>
@@ -59,9 +59,9 @@
 							   
 							</select>
 						  <br>
-						  <form method="post">
-						  <label for="branch">Select Branch:</label>  
-							<select name="branch">
+						  
+						  <label for="branch[]">Select Branch:</label>  
+							<select id="branchdrop" name="branch[]" multiple>
 							<option value="Aerospace Engineering (5 Years, Bachelor and Masters of Technology)5">Aerospace Engineering (5 Years, Bachelor and Masters of Technology)</option>
 							<option value="Agricultural and Food Engineering (4 Years,Bachelor of Technology)">Agricultural and Food Engineering (4 Years,Bachelor of Technology)</option>
 							<option value="Agricultural and Food Engineering with M.Tech. in any of the listed specializations (5 Years, Bachelor and Master of Technology (Dual Degree))">Agricultural and Food Engineering with M.Tech. in any of the listed specializations (5 Years, Bachelor and Master of Technology (Dual Degree))</option>
@@ -350,8 +350,8 @@
 				
 
 		<!-- Scripts -->
-		<!-- <script src="https://code.jquery.com/jquery-3.4.1.js"></script> -->
-		<!-- <script src="assets/js/drop.js"></script> -->
+		<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+		<script src="assets/js/drop.js"></script>
 
 	</body>
 </html>
