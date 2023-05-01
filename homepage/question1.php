@@ -6,6 +6,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/q1_1.css" />
 		<link rel="stylesheet" href="assets/css/proj.css" />
+		<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+		<script src="assets/js/drop.js"></script>
 		
 	</head>
 	<body class="is-preload">
@@ -13,7 +15,7 @@
 			<div id="wrapper">
 
 				<nav >
-					<a href="try.php"><img class="navimg" src="images/cropped.png" width=50% height=50%></a>
+					<a href="index.html"><img class="navimg" src="images/cropped.png" width=50% height=50%></a>
 					<div style = "float:right" >
 						<ul>
 							<li class="item"><a href="predict.php">Predictors</a></li>

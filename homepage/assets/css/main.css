@@ -37,6 +37,29 @@ ol, ul {
 	list-style: none;
 }
 
+/* predictor css */
+.rank{
+	width: 90%;
+	margin: 0 auto;
+}
+
+.cat{
+	margin-left: 5%;
+	width: 90%;
+	margin-top: 1%;
+}
+.cat_inp:active{
+	/* margin-bottom: ; */
+}
+.gap{
+	margin-top: 2%;
+	margin-left: 25%;
+}
+
+
+/* predictor css */
+
+
 blockquote, q {
 	quotes: none;
 }
@@ -2968,7 +2991,7 @@ img {
 /* Header */
 
 	#header {
-		padding: 8em 0 0.1em 0 ;
+		padding: 2.5em 0 0.1em 0 ;
 	}
 
 		#header .logo {
@@ -2977,7 +3000,7 @@ img {
 			color: inherit;
 			font-weight: 900;
 			letter-spacing: 0.35em;
-			margin: 0 0 2.5em 0;
+			margin: 0 0 2em 0;
 			text-decoration: none;
 			text-transform: uppercase;
 			display: inline-block;
@@ -3466,3 +3489,4 @@ img {
 			}
 
 		}
+
