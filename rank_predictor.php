@@ -61,7 +61,8 @@
 		<div class = "DIV3">
 			<form action="" method="post" > 
 				<p> Branch <input type="text"  name="branch"> </p>
-				<p> institute <input type="text"  name="institute"> </p>
+				<p> Institute <input type="text"  name="institute"> </p>
+				<p> Catogery <input type="text"  name="cat"> </p>
 				<input type="submit" value="Submit">
 				<input type="reset" value="Reset">
  
@@ -76,17 +77,29 @@
 					$conn = new PDO("mysql:host=$servername;port=$port_no;dbname=$myDB", $username, $password);
 					$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			
-					if (  isset($_POST['branch']) && isset($_POST['institute']) ) {
-						// $stmt = $conn->query("SELECT Password1 FROM lab4.formdata WHERE Email = $_POST['Email'] ");
-						$stmt = $conn->query("SELECT CR FROM orcr_18_22_neutral_abb_cleaned__1_ WHERE abb  = \"{$_POST['branch']}\" AND institute = \"{$_POST['institute']}\" and seattype = 'OPEN' ORDER by Year_;");
+					if (  isset($_POST['branch']) && isset($_POST['institute']) && isset($_POST['cat']) ) {
+						$stmt1 = $conn->query("SELECT I_code FROM IIT WHERE institute = \"{$_POST['institute']}\";");
+						while($row1 = $stmt1->fetch(PDO::FETCH_ASSOC)){
+							$i_code = $row1['I_code'];
+							// echo $_POST['branch'];
+						}
+							
+						$stmt2 = $conn->query("SELECT p_code FROM program WHERE program = \"{$_POST['branch']}\";");
+						while($row2 = $stmt2->fetch(PDO::FETCH_ASSOC)){
+							$p_code = $row2['p_code'];
+						}
 						
-						// $stmt = $conn->query("SELECT * FROM lab5.associated_faculties WHERE Name1 = \"{$_POST['Name1']}\"");
-						// $row = $stmt->fetch(PDO::FETCH_ASSOC);
+												
+
+
+
+						$stmt = $conn->query("SELECT CR FROM rank_data WHERE p_code  = \"{$p_code}\" AND I_code = \"{$i_code}\" AND seattype = \"{$_POST['cat']}\" ORDER by Year_;");
+						
 						$data = array();
 						$period = count($data)+1;
 
 						while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-		
+							// echo $row['CR'];
 							array_push($data,$row['CR']);
 						}
 						$alpha = 2 / ($period + 1);
