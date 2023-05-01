@@ -77,7 +77,7 @@
 					$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			
 					if (  isset($_POST['rank']) && isset($_POST['cat'])) {
-						$stmt = $conn->query("SELECT institute,program FROM rank_data natural join IIT natural join program where OR_<= {$_POST['rank']} and CR>= {$_POST['rank']} and seattype = \"{$_POST['cat']}\" GROUP BY institute,program ORDER BY Year_*(-CR) ;");
+						$stmt = $conn->query("SELECT institute,program FROM rank_data natural join IIT natural join program where OR_<= {$_POST['rank']} and CR>= {$_POST['rank']} and seattype = \"{$_POST['cat']}\" and Year_>2019 GROUP BY institute,program ORDER BY Year_,(-CR) DESC ;");
 						echo '<table border="1">',"\n";
 						echo "<tr> <td> institute </td> <td> Branch </td> </tr>"; 
 						
