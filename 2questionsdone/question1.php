@@ -36,7 +36,7 @@
 								</nav> -->
 
 							<!-- Navigation Bar -->
-							<<nav >
+							<nav >
 								<!-- <a href="try.html"><img class="navimg" src="images/cropped.png" width=50% height=50%></a> -->
 								<div style = "float:right" >
 									<ul>
@@ -46,14 +46,14 @@
 											  <i class="fa fa-caret-down"></i>
 											</button>
 											<div class="dropdown-content">
-											  <a href="college-advisor.php">College Advisor</a>
-											  <a href="rank_predictor.php">Rank Predictor</a>
+											  <a href="councelling_adviser.php">College Advisor</a>
+											  <a href="closingpredictor.php">Rank Predictor</a>
 		
 											</div>
 										  </div>
 										  <!-- dropdown -->
 										<!-- <li class="item"><a href="college-advisor.php">Predictors</a></li> -->
-										<li class="item"><a href="mtt.html">About Team</a></li>
+										<li class="item"><a href="aboutteam.php">About Team</a></li>
 									</ul>
 								</div>
 							</nav>
