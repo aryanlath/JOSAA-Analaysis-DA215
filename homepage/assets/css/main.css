@@ -53,7 +53,7 @@ ol, ul {
 }
 .gap{
 	margin-top: 2%;
-	margin-left: 25%;
+	margin-left: 28%;
 }
 
 
@@ -3490,3 +3490,23 @@ img {
 
 		}
 
+
+.dropforcp{
+	width:90%;
+	margin-left:5%;
+	margin-top:0.5%;
+}
+
+.cpoutput{
+	width:90%;
+	margin-left:35%;
+	margin-top:2%;
+	font-weight: bold;
+	font-size: 30px;
+}
+
+.rank1{
+	width: 90%;
+	margin: 0 auto;
+	margin-top:2%;
+}
