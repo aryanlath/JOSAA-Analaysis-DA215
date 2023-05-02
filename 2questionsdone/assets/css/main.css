@@ -2747,7 +2747,7 @@ img {
 
 .card_content {
   padding: 1rem;
-  background: linear-gradient(to bottom left, #8c6f72 40%, #ffffff 100%);
+  background: linear-gradient(to bottom left, #9fabb3 100%, #ffffff 100%);
 }
 
 .card_title {
@@ -3553,4 +3553,30 @@ img {
 			}
 
 		}
+
+.dropforcp{
+	width:90%;
+	margin-left:5%;
+	margin-top:0.5%;
+}
+
+.cpoutput{
+	width:90%;
+	margin-left:35%;
+	margin-top:2%;
+	font-weight: bold;
+	font-size: 30px;
+}
+
+.rank1{
+	width: 90%;
+	margin: 0 auto;
+	margin-top:2%;
+}
+
+.atdiv{
+	width:90%;
+	margin-left:10%;
+	margin-top:10%;
+}
 
