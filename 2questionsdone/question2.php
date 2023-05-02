@@ -7,6 +7,10 @@
 		<!-- <link rel="stylesheet" href="assets/css/main.css" /> -->
 		<link rel="stylesheet" href="assets/css/q1_1.css" />
 		<link rel="stylesheet" href="assets/css/proj.css" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!-- Scripts -->
+		<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+		<script src="assets/js/drop.js"></script>
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 
@@ -36,8 +40,20 @@
 								<!-- <a href="try.html"><img class="navimg" src="images/cropped.png" width=50% height=50%></a> -->
 								<div style = "float:right" >
 									<ul>
-										<li class="item"><a href="councelling_adviser.php">Predictors</a></li>
-										<li class="item"><a href="team.html">About Team</a></li>
+										<!-- dropdown -->
+										<div class="dropdown">
+											<button class="dropbtn"><li class="item"><p class = "pred">Predictors</p></li>
+											  <i class="fa fa-caret-down"></i>
+											</button>
+											<div class="dropdown-content">
+											  <a href="college-advisor.php">College Advisor</a>
+											  <a href="rank_predictor.php">Rank Predictor</a>
+		
+											</div>
+										  </div>
+										  <!-- dropdown -->
+										<!-- <li class="item"><a href="college-advisor.php">Predictors</a></li> -->
+										<li class="item"><a href="mtt.html">About Team</a></li>
 									</ul>
 								</div>
 							</nav>

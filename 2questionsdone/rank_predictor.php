@@ -1,18 +1,13 @@
+
 <html>
-	<head>
+<head>
 		<title>JOSAA Analysis</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		
-		<!-- <link rel="stylesheet" href="assets/css/main.css" /> -->
-		<link rel="stylesheet" href="assets/css/q1_1.css" />
-		<link rel="stylesheet" href="assets/css/proj.css" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<!-- Scripts -->
-		<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-		<script src="assets/js/drop.js"></script>
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
+</head>
+
 
 
 <body class="is-preload">
@@ -36,7 +31,7 @@
 								</nav> -->
 
 							<!-- Navigation Bar -->
-							<<nav >
+							<nav >
 								<!-- <a href="try.html"><img class="navimg" src="images/cropped.png" width=50% height=50%></a> -->
 								<div style = "float:right" >
 									<ul>
@@ -61,17 +56,20 @@
 						</div>
 					</header>
 
-					<div class="question">
-							<h1>Which Branch is getting more popular? </h1>
-				    </div>
-				
-						
-					
+	<div class = "DIV1">
+		<center>
+		<h1> Rank Predictor </h1>
+		</center>
+	</div>
+	<div class = "DIV4">
+		
+		<div class = "DIV3">
+			<form action="" method="post" > 
+				<!-- <p> Branch <input type="text"  name="branch"> </p> -->
+				<!-- <p> Institute <input type="text"  name="institute"> </p> -->
 
-					<div class="dropdowns">
-						<form method="post">
-							<label for="college">Select College:</label>
-							<select name="college">
+				<label for="institute">Select College:</label>
+							<select name="institute">
 								<option value="">Select</option>
 								<option value="Indian Institute of Technology Bombay">IIT Bombay </option>
 								<option value="Indian Institute of Technology Delhi">IIT Delhi</option>
@@ -99,9 +97,10 @@
 							   
 							</select>
 						  <br>
-						  
-						  <label for="branch[]">Select Branch:</label>  
-							<select id="branchdrop" name="branch[]" multiple>
+
+				<label for="branch">Select Branch:</label>  
+							<select id="branchdrop" name="branch" >
+							<option value="">Select</option>
 							<option value="Aerospace Engineering (5 Years, Bachelor and Master of Technology (Dual Degree))">Aerospace Engineering (5 Years, Bachelor and Masters of Technology)</option>
 							<option value="Agricultural and Food Engineering (4 Years,Bachelor of Technology)">Agricultural and Food Engineering (4 Years,Bachelor of Technology)</option>
 							<option value="Agricultural and Food Engineering with M.Tech. in any of the listed specializations (5 Years, Bachelor and Master of Technology (Dual Degree))">Agricultural and Food Engineering with M.Tech. in any of the listed specializations (5 Years, Bachelor and Master of Technology (Dual Degree))</option>
@@ -244,8 +243,11 @@
 							</select>
 						<br>
 
-						<label for="category">Select Category:</label>
-						<select name="category">
+				
+				<!-- <p> Category <input type="text"  name="cat"> </p> -->
+
+				<label for="cat">Select Category:</label>
+						<select name="cat">
 							<option value="">Select</option>
 							<option value="Open">Open </option>
 							<option value="OBC-NCL">OBC-NCL</option>
@@ -255,145 +257,71 @@
 							<option value="PWD">PWD</option>
 						</select>
 						<br>
-							<button type="submit" name="submit">Enter</button>
-							</form>
-</div>
-				
-				<div class = "chartcont">
 
-    
-				<?php
-
-					$host = 'localhost';
-					$username = 'devanshu';
-					$password = 'passwords';
-					$dbname = 'mydb';
-					$conn = new mysqli($host, $username, $password, $dbname);
-
-					if ($conn->connect_error) {
-						die("Connection failed: " . $conn->connect_error);
-					}
-
-					if(isset($_POST['submit'])){
-
-						$city = $_POST['college'];
-
-						$filter_branches = array("Computer Science and Engineering (4 Years, Bachelor of Technology)", "Civil Engineering (4 Years, Bachelor of Technology)", "Chemical Engineering (4 Years, Bachelor of Technology)");
-						$filter_branches = $_POST['branch'];
-						$category = $_POST['category'];
-						$filter_branches = "'" . implode("','", $filter_branches) . "'";
-
-						$sql = "SELECT P.program as branch, C.CR as cr , C.YEAR_ as year FROM rank_data C, program P, iit I WHERE I.institute = '{$city}' and C.seattype = '{$category}' and P.program in ($filter_branches) and P.p_code = C.P_code and I.I_code = C.I_code ORDER by branch, year";
-						$result = $conn->query($sql);
-
-						$conn->close();
-
-						$branches = array();
-						$ranks = array();
-
-						if ($result->num_rows > 0) {
-
-							while($row = $result->fetch_assoc()) {
-
-								if ( isset( ${$row['branch']} ) ){
-
-									${$row['branch']}[(int)$row['year']] = $row['cr'];
-
-								}else{
-
-									${$row['branch']} = array();
-
-									array_push($branches, $row['branch']);
-
-									${$row['branch']}[(int)$row['year']] = $row['cr'];
+				<input type="submit" value="Submit">
+				<input type="reset" value="Reset">
+ 
+			</form> 
+			<?php
+				$servername = "localhost"; 
+				$port_no = 3306; 
+				$username = "anant";
+				$password = "YES";
+				$myDB= "dbase";
+				try{
+					$conn = new PDO("mysql:host=$servername;port=$port_no;dbname=$myDB", $username, $password);
+					$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			
+					if (  isset($_POST['branch']) && isset($_POST['institute']) && isset($_POST['cat']) ) {
+						$stmt1 = $conn->query("SELECT I_code FROM IIT WHERE institute = \"{$_POST['institute']}\";");
+						while($row1 = $stmt1->fetch(PDO::FETCH_ASSOC)){
+							$i_code = $row1['I_code'];
+							// echo $_POST['branch'];
+						}
+							
+						$stmt2 = $conn->query("SELECT p_code FROM program WHERE program = \"{$_POST['branch']}\";");
+						while($row2 = $stmt2->fetch(PDO::FETCH_ASSOC)){
+							$p_code = $row2['p_code'];
+						}
 						
-								}
-							}
+												
 
-						} else {
-							echo "0 results";
+
+
+						$stmt = $conn->query("SELECT CR FROM rank_data WHERE p_code  = \"{$p_code}\" AND I_code = \"{$i_code}\" AND seattype = \"{$_POST['cat']}\" ORDER by Year_;");
+						
+						$data = array();
+
+						while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+							// echo $row['CR'];
+							array_push($data,$row['CR']);
 						}
+						$period = count($data);
+						// echo $period;
 
-						$i = 0;
-
-						while ($i < count($branches)){
-
-							for ($x = 2018; $x <= 2022; $x++){
-								if (!array_key_exists($x, ${$branches[$i]})){
-									${$branches[$i]}[$x] = null;
-								}
-							}
-
-							ksort(${$branches[$i]});
-
-							array_push($ranks , array_values(${$branches[$i]}) );
-
-							$i++;
-
+						$alpha = 2 / ($period + 1);
+						$ema = array();
+						$ema[0] = $data[0];
+						for ($i = 1; $i < count($data); $i++) {
+							$ema[$i] = ($alpha * $data[$i]) + ((1 - $alpha) * $ema[$i - 1]);
 						}
-
-						$ranks = json_encode($ranks);
-						$branches = json_encode($branches);
-
-						$years = array(2018, 2019, 2020, 2021, 2022);
-						$years = json_encode($years);
-
-
+						echo (int) round($ema[count($ema)-1]);
 					}
 
-				?>
-
-				
-
-					<canvas class="charts" id="myChart"> </canvas>
-					<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-					<script src="scripts.js"></script>
-					<script>
-					const ctx = document.getElementById('myChart');
-
-					var ranks = <?php echo $ranks ?>;
-					var branches = <?php echo $branches ?>;
-					var labelList = <?php echo $years ?>;
-
-					let dataa = [];
-
-					for (let i = 0; i < branches.length; i++){
-						let dict = {
-							label : branches[i],
-							data : ranks[i],
-							borderWidth: 1
-						}
-						dataa.push(dict);
+					
 					}
-
-					new Chart(ctx, {
-						type: 'line',
-						data: {
-							labels: labelList,
-							datasets: dataa
-						},
-						options: {
-							maintainAspectRatio: false,
-							scales: {
-							y: {
-								beginAtZero: true
-							}
-							}
-						}
-					});
-					</script>
-
-				</div>
-				</div>
-				
-
-		<!-- Scripts -->
-		<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-		<script src="assets/js/drop.js"></script>
+					
+					catch(PDOException $e) {
+						echo "Connection failed: " . $e->getMessage();
+					}
+			?>
+		</div>
+	</div>
 	
 </body>
 
-</html>
+
+
 
 
 
