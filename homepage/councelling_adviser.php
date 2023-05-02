@@ -51,8 +51,20 @@
 		
 		<div class = "DIV3">
 			<form action="" method="post" class="form"> 
-				<p class="rank"> Rank <input type="number"  name="rank"> </p>
-				<p class="cat"> Category <input class="cat_inp" type="text"  name="cat"> </p>
+				<p class="rank"> Enter Rank <input type="number"  name="rank"> </p>
+				
+				<p class="rank"> Category  </p>
+				<select class = "dropforcp" name="cat">
+				<option value="">Select</option>
+				<option value="Open">Open </option>
+				<option value="OBC-NCL">OBC-NCL</option>
+				<option value="EWS">EWS</option>
+				<option value="SC">SC</option>
+				<option value="ST">ST</option>
+				<option value="PWD">PWD</option>
+				</select>
+
+				
 				<input type="submit" value="Submit" class="gap">
 				<input type="reset" value="Reset" class="gap">
 			</form> 
@@ -62,7 +74,7 @@
 				$port_no = 3306; 
 				$username = "anant";
 				$password = "YES";
-				$myDB= "JOSAA";
+				$myDB= "dbase";
 				try{
 					$conn = new PDO("mysql:host=$servername;port=$port_no;dbname=$myDB", $username, $password);
 					$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -100,8 +112,3 @@
 
 </html>
 
-
-
-<!-- SELECT institute,CR,Year_ FROM fri.orcr_18_22_neutral_abb_cleaned__1_ WHERE abb = \"{$_POST['Branch']}\" and seat_type = 'OPEN' ORDER by institute,Year_"; -->
-
-<!-- SELECT institute,min(OR_),Year_ FROM fri.orcr_18_22_neutral_abb_cleaned__1_ group by institute,Year_"; -->
