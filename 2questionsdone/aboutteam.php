@@ -56,7 +56,7 @@
 						<ul class="cards">
 						  <li class="cards_item">
 							<div class="card">
-							  <div class="card_image"><img src="images/img02.jpeg"></div>
+							  <div class="card_image"><img src="images/sub.jpeg"></div>
 							  <div class="card_content">
 								<h2 class="card_title">Subhash Patel</h2>
 								<p class="card_text">210150017</p>
@@ -66,7 +66,7 @@
 						  </li>
 						  <li class="cards_item">
 							<div class="card">
-							  <div class="card_image"><img src="images/img02.jpeg"></div>
+							  <div class="card_image"><img src="images/dev.jpeg"></div>
 							  <div class="card_content">
 								<h2 class="card_title">Devansh Bhardwaj</h2>
 								<p class="card_text">210150010</p>
@@ -76,7 +76,7 @@
 						  </li>
 						  <li class="cards_item">
 							<div class="card">
-							  <div class="card_image"><img src="images/img02.jpeg"></div>
+							  <div class="card_image"><img src="images/ary.jpeg"></div>
 							  <div class="card_content">
 								<h2 class="card_title">Aryan Lath</h2>
 								<p class="card_text">210150007</p>
@@ -86,7 +86,7 @@
 						  </li>
 						  <li class="cards_item">
 							<div class="card">
-							  <div class="card_image"><img src="images/img02.jpeg"></div>
+							  <div class="card_image"><img src="images/adi.jpeg"></div>
 							  <div class="card_content">
 								<h2 class="card_title">Aditya Suryawanshi</h2>
 								<p class="card_text">210150004</p>
@@ -96,7 +96,7 @@
 						  </li>
 						  <li class="cards_item">
 							<div class="card">
-							  <div class="card_image"><img src="images/img02.jpeg"></div>
+							  <div class="card_image"><img src="images/ana.jpeg"></div>
 							  <div class="card_content">
 								<h2 class="card_title">Anant Kacholia</h2>
 								<p class="card_text">210150005</p>
