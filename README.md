@@ -24,7 +24,7 @@ Follow the steps
     Import the database mydb.sql as mydb
     Open http://localhost/JOSAA-Analaysis-DA215/index.html in your browser
 
-This will oepn the homepage of the website.
+This will open the homepage of the website. Now you can navigate through and select the option you want to choose.
 ![Screenshot 2023-05-18 231127](https://github.com/subb16/JOSAA-Analaysis-DA215/assets/66398108/fa7b5536-01ab-4fec-965f-b5bb9d559921)
 
 ## About the project
