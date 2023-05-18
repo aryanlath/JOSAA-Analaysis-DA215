@@ -29,4 +29,10 @@ This will oepn the homepage of the website.
 
 ## About the project
 
+- Branch Specifi Analaysis: If you want to analyse the ranks in a particular branch be any set of colleges ,this option should be your choice.
+![Screenshot 2023-05-18 231340](https://github.com/subb16/JOSAA-Analaysis-DA215/assets/66398108/2c73afd3-8e22-41aa-aff1-82a045738b75)
+
+
+- College Specifi Analaysis: If you want to analyse the ranks in a particular college be any set of colleges ,this option should be your choice.
+ ![Screenshot 2023-05-18 232054](https://github.com/subb16/JOSAA-Analaysis-DA215/assets/66398108/365f633d-d800-441c-8e4e-3dfa30d04e42)
 
